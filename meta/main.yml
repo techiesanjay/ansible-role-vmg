@@ -32,8 +32,8 @@ galaxy_info:
       versions:
       - all
 
-  galaxy_tags
-    - manifest_generator
+  galaxy_tags:
+    - manifest-generator
     - cloud-init
     - virtualmachine
     - vm
