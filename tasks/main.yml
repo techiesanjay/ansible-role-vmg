@@ -1,0 +1,12 @@
+---
+# tasks file for vmg
+
+- name: Generating libvirt configuration manifest
+  ansible.builtin.template:
+    src: libvirt.j2
+    dest: '{{ vmg_nw_file_path }}'
+
+- name: Generating cloud_init VM manifest
+  ansible.builtin.template:
+    src: vm_info.j2
+    dest: '{{ vmg_vm_file_path }}'

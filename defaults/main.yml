@@ -1,0 +1,40 @@
+---
+# defaults file for vmg
+
+vmg_nw_name: vmg-net
+vmg_nw_bridge: br0-vmg
+vmg_nw_gateway: 10.0.0.1
+vmg_nw_mask: 255.0.0.0
+vmg_nw_dhcp_start: 10.0.0.51
+vmg_nw_dhcp_end: 10.0.0.254
+vmg_nw_file_path: 'configs/libvirt-config.yml'
+
+vmg_vm_domain: example.com
+vmg_vm_image_link: https://cloud.centos.org/centos/8-stream/x86_64/images/CentOS-Stream-GenericCloud-8-20220125.1.x86_64.qcow2
+vmg_vm_first_ip_octet: 10
+vmg_vm_network: 10.0.0.0
+vmg_vm_netmask: 255.0.0.0
+vmg_vm_root_passwd: letmein
+vmg_vm_os_variant: rhel8.0
+vmg_vm_nm_controlled_network: 'yes'
+vmg_vm_storage_pool_name: vm-store
+vmg_vm_file_path: 'configs/cloudinit-config.yml'
+
+vmg_vms_infra:
+  'workstation':
+     count: 1
+     cpus: 2
+     memory: 2048
+     root_disk_size: 20G
+     hostname_spec: ws
+     alphabet: no
+     snapshot: no
+  'server':
+     count: 2
+     cpus: 2
+     memory: 2048
+     root_disk_size: 20G
+     hostname_spec: server
+     alphabet: yes
+     snapshot: no
+
